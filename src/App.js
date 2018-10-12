@@ -25,6 +25,16 @@ class App extends Component {
         ]
     };
     
+    constructor() {
+      super();
+      console.log('App - Constructor');
+    }
+    
+    componentDidMount() {
+      //good for ajax calls
+      console.log('App - Mounted')
+    }
+    
     //handle the onClick event to increment the counter
     handleIncrement = counter => {
         const counters = [...this.state.counters];
@@ -50,6 +60,7 @@ class App extends Component {
     };
     
     render() {
+      console.log('App - Rendered');
         return (
             <React.Fragment>
                 <NavBar totalCounters={this.state.counters.filter(counter => counter.value > 0).length} />
